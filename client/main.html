@@ -3,10 +3,18 @@
 </head>
 
 <body>
+  {{> header}}
+  {{> messageList}}
+  {{> messageForm}}
+</body>
+
+<template name="header">
   <header>
     <h1>Welcome to Spyke!</h1>
   </header>
+</template>
 
+<template name="messageList">
   <section id="message-list">
     <div class="message">
       <strong>username1</strong>
@@ -23,10 +31,12 @@
       <p>Hello, World!</p>
     </div>
   </section>
+</template>
 
+<template name="messageForm">
   <section id="form-container">
     <form>
       <input type="text" placeholder="Type here, then hit Enter.">
     </form>
   </section>
-</body>
+</template>
