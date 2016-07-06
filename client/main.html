@@ -10,6 +10,7 @@
 
 <template name="header">
   <header>
+    {{> loginButtons align="right"}}
     <h1>Welcome to Spyke!</h1>
   </header>
 </template>
@@ -23,7 +24,7 @@
 </template>
 
 <template name="message">
-  <div class="message">
+  <div class="message {{isMyMessage}}">
     <strong>{{username}}</strong>
     <p>{{text}}</p>
   </div>
@@ -31,8 +32,12 @@
 
 <template name="messageForm">
   <section id="form-container">
-    <form id="message-form">
-      <input type="text" name="messageBox" placeholder="Type here, then hit Enter.">
-    </form>
+    {{#if currentUser}}
+      <form id="message-form">
+        <input type="text" name="messageBox" placeholder="Type here, then hit Enter.">
+      </form>
+    {{else}}
+      <p>Only members can send messages.</p>
+    {{/if}}
   </section>
 </template>
