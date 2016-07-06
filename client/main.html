@@ -16,21 +16,17 @@
 
 <template name="messageList">
   <section id="message-list">
-    <div class="message">
-      <strong>username1</strong>
-      <p>Hello, World!</p>
-    </div>
-
-    <div class="message">
-      <strong>username1</strong>
-      <p>Hello, World!</p>
-    </div>
-
-    <div class="message">
-      <strong>username1</strong>
-      <p>Hello, World!</p>
-    </div>
+    {{#each messages}}
+      {{> message}}
+    {{/each}}
   </section>
+</template>
+
+<template name="message">
+  <div class="message">
+    <strong>{{username}}</strong>
+    <p>{{text}}</p>
+  </div>
 </template>
 
 <template name="messageForm">
